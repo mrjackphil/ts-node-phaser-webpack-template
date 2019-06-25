@@ -7,12 +7,15 @@ module.exports = {
   entry: './src/index.ts',
   mode: "development",
   devtool: "eval-source-map",
+  resolve: {
+    extensions: ['.ts', '.js', '.json']
+  },
   module: {
     rules: [
       {
         test: /\.ts$/,
         exclude: /node_modules/,
-        use: [ { loader: "ts-loader" } ]
+        use: [ { loader: "ts-loader" }, ]
       },
       {
         test: /\.js$/,
